@@ -1,0 +1,16 @@
+body {
+  background-color: #79be95;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+  .form-container {
+    padding: 20px;
+  }
+}

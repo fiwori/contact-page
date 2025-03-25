@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+  <body class="custom-bg">
+     
+    <div class="position-fixed top-0 start-0 w-100 h-100 bg-success bg-opacity-50 bg-blur">
+    <div
+      class="container d-flex justify-content-center align-items-center min-vh-100"
+    >
+      <div class="card p-4 shadow form-container">
+        <h4 class="text-start mb-4">Contact Us</h4>
+        <form>
+          
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">First Name *</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div class="col">
+              <label class="form-label">Last Name *</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email Address *</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Query Type</label>
+            <div class="d-flex gap-2">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="queryType"
+                  id="generalEnquiry"
+                  checked
+                />
+                <label class="form-check-label" for="generalEnquiry"
+                  >General Enquiry</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="queryType"
+                  id="supportRequest"
+                />
+                <label class="form-check-label" for="supportRequest"
+                  >Support Request</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="Write your message"
+            ></textarea>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="consent" />
+            <label class="form-check-label" for="consent"
+              >I consent to being contacted by the team</label
+            >
+          </div>
+
+          <button type="submit" class="btn btn-success w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="script.js">
+            document.getElementById("contactForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent form submission
+
+          const firstName = document.getElementById("firstName").value.trim();
+          const lastName = document.getElementById("lastName").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+          const queryType = document.querySelector('input[name="queryType"]:checked');
+          const consent = document.getElementById("consent").checked;
+
+          if (!firstName  !lastName  !email  !message  !queryType || !consent) {
+              alert("Please fill in all fields and give consent.");
+              return;
+          }
+
+          alert(Thank you, ${firstName}! Your ${queryType.value} has been submitted.);
+      });
+    </script>
+
+  
+    </div>
+  </body>
+</html>
